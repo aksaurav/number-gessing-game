@@ -30,4 +30,18 @@ def computer_guess(x):
     print(f'Yay! The computer guessed your number, {guess}, correctly!')
 
 
-guess(10)
+while 1:
+    print("*****Number Gussing Game******")
+    print("1. Guess computer number")
+    print("2. Computer guess your number")
+    print("3. Exit")
+
+    choice = int(input("Enter you choice: "))
+    if choice == 1:
+        guess(10)
+    elif choice == 2:
+        computer_guess(10)
+    elif choice == 3:
+        break
+    else:
+        print("Invalid Choice!")
