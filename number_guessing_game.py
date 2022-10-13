@@ -1,4 +1,8 @@
 
+from curses.ascii import isdigit
+import random
+import time
+
 import random
 
 def guess(x):
@@ -12,6 +16,7 @@ def guess(x):
             print('Sorry, guess again. Too high.')
 
     print(f'Yay, congrats. You have guessed the number {random_number} correctly!!')
+    time.sleep(.8)
 
 def computer_guess(x):
     low = 1
@@ -29,7 +34,7 @@ def computer_guess(x):
             low = guess + 1
 
     print(f'Yay! The computer guessed your number, {guess}, correctly!')
-
+    time.sleep(.8)
 
 while 1:
     print("*****Number Gussing Game******")
@@ -42,12 +47,18 @@ while 1:
         choice = int(choice)
 
         if choice == 1:
-            guess(10)
+            x = input("Enter a maxmum number you want to guess: ")
+            if x.isdigit():
+                x = int(x)
+                guess(x)
+            else:
+                print("Enter a number")
         elif choice == 2:
-            computer_guess(10)
+                computer_guess(10)
         elif choice == 3:
             break
         else:
             print("Invalid Choice!")
+        time.sleep(.8)
     else:
         print('Provided value is not a number, is a negative number or a float')
