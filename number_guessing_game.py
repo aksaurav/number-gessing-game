@@ -1,3 +1,4 @@
+
 import random
 
 def guess(x):
@@ -36,12 +37,17 @@ while 1:
     print("2. Computer guess your number")
     print("3. Exit")
 
-    choice = int(input("Enter you choice: "))
-    if choice == 1:
-        guess(10)
-    elif choice == 2:
-        computer_guess(10)
-    elif choice == 3:
-        break
+    choice = input("Enter you choice: ")
+    if choice.isdigit():
+        choice = int(choice)
+
+        if choice == 1:
+            guess(10)
+        elif choice == 2:
+            computer_guess(10)
+        elif choice == 3:
+            break
+        else:
+            print("Invalid Choice!")
     else:
-        print("Invalid Choice!")
+        print('Provided value is not a number, is a negative number or a float')
