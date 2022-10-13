@@ -1,20 +1,20 @@
 
-from curses.ascii import isdigit
 import random
 import time
-
-import random
 
 def guess(x):
     random_number = random.randint(1, x)
     guess = 0
     while guess != random_number:
+        # getting user input
         guess = int(input(f'Guess a number between 1 and {x}: '))
+        # setting up the conditons
         if guess < random_number:
             print('Sorry, guess again. Too low.')
         elif guess > random_number:
             print('Sorry, guess again. Too high.')
 
+    # exiting the loop
     print(f'Yay, congrats. You have guessed the number {random_number} correctly!!')
     time.sleep(.8)
 
